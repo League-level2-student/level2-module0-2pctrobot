@@ -7,7 +7,7 @@ public class _00_ArrayCheatSheet {
 	public static void main(String[] args) {
 		Random rand = new Random();
 		//1. make an array of 5 Strings
-		String[] arr = { " This", " is", " an", " array", "." };
+		String[] arr = { "This", " is", " an", " array", "." };
 		//2. print the third element in the array
 		System.out.println(arr[2]);
 		//3. set the third element to a different value
