@@ -54,10 +54,12 @@ public class _03_VanGogh extends PApplet {
     /*
      * Write your code below
      */
+    PImage [] gallery;
     Brush brush;
-    
     void initializePaintings() {
-        
+    	for (int i = 0; i <= 4; i++) {
+    		gallery[i] = new PImage();
+    	}
     }
     
     void selectNextPainting() {

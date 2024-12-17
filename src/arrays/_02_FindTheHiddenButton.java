@@ -46,6 +46,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 	JButton button22;
 	JButton button23;
 	JButton button24;
+	int helper;
 	Random rand = new Random();
 	//1. create an array of JButtons. Don't initialize it yet.
 	JButton[] pushthe = { button00,button01,button02,button03,button04,button05,button06,button07,button08,button09,button10,button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,button21,button22,button23,button24 };
@@ -95,30 +96,31 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
 		
 		int hiddenButton = rand.nextInt(numOfButtons);
+		
 		//14. Set the text of the JButton located at hiddenButton to  "ME"
 		pushthe[hiddenButton].setText("ME");
 		//15. Use Thread.sleep(1000); to pause the program.
 		//    Surround it with a try/catch - use Eclipse helper for this
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//16. Set the text of the JButton located at hiddenButton to be blank.
 		pushthe[hiddenButton].setText(String.valueOf(hiddenButton));
+		helper = hiddenButton;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonClicked = (JButton)e.getSource();
-		
 		//17. if the hiddenButton is clicked, tell the user that they win.
-		if(buttonClicked.getText().equals(String.valueOf(hiddenButton))) {
-			JOptionPane.showMessageDialog(null, "Dead on. Good guessing.");
-			
+		if(buttonClicked.getText().equals(String.valueOf(helper))) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			System.exit(0);
 		}else {
-			JOptionPane.showMessageDialog(null, "Oof, better luck next time.");
+			JOptionPane.showMessageDialog(null, "Incorrect!");
 			System.exit(0);
 		}
 		//18. else tell them to try again
