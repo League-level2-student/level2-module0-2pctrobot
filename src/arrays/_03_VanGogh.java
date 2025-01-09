@@ -44,6 +44,7 @@ import processing.core.PImage;
  * 
  * 11.EXTRA: Find more paintings and add them to your code.
  *           Watercolor paintings work the best!
+ *
  */
 
 public class _03_VanGogh extends PApplet {
