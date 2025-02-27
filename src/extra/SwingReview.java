@@ -39,7 +39,7 @@ public class SwingReview implements ActionListener, KeyListener {
 		frame.setVisible(true);
 		// 3. Run your program. Do you see your window? It's probably very
 		// small.
-//yes
+		//yes
 		// 4. Set the default close operation to JFrame.EXIT_ON_CLOSE
 		// This makes the program actually close when we hit the red X in the corner!
 		// Without it, our program keeps
@@ -58,27 +58,32 @@ public class SwingReview implements ActionListener, KeyListener {
 		// 10. Pack your JFrame.
 		frame.pack();
 		// 11. Run your program again. Do you see your message?
-
+		//yes
 		// 12. Use the loadImage method to set the icon of the JLabel object.
-
+		label.setIcon(loadImage("java.png"));
 		// 13. Re-pack the JFrame object.
-
+		frame.pack();
 		// 14. Run your program again. Do you see the image?
-
+		// yes
 		// 15. Initialize your first JButton variable as an object of the JButton class
-
+		button1 = new JButton();
 		// 16. Add the JButton object to the JPanel
-
+		panel.add(button1);
 		// 17. Pack your JFrame
-
+		frame.pack();
 		// 18. Add an action listener to the button
-
+		button1.addActionListener(this);
 		// 19. Set the text of your button to "Click Me"
-
+		button1.setText("Clicketh me!");
 		// 20. Pack your JFrame
-
+		frame.pack();
 		// 21. Add a second JButton and action listener to the button
-
+		button2 = new JButton();
+		panel.add(button2);
+		button2.addActionListener(this);
+		button2.setText("Nein, clicketh me!");
+		frame.pack();
+		
 		// 22. Set the text of your button to "No, Click Me"
 
 		// 23. Uncomment the 2 lines below (Ignore what they do for now)
