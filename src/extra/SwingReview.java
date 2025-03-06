@@ -29,6 +29,8 @@ public class SwingReview implements ActionListener, KeyListener {
 	JLabel label;
 	JButton button1;
 	JButton button2;
+	int count1;
+	int count2;
 
 	public void run() throws Exception {
 		// 1. Initialize your JFrame variable as an object of the JFrame class
@@ -87,11 +89,11 @@ public class SwingReview implements ActionListener, KeyListener {
 		// 22. Set the text of your button to "No, Click Me"
 
 		// 23. Uncomment the 2 lines below (Ignore what they do for now)
-		// button1.setFocusable(false);
-		// button2.setFocusable(false);
+		 button1.setFocusable(false);
+		 button2.setFocusable(false);
 
 		// 29. Add a key listener to the frame
-
+frame.addKeyListener(null);
 	}
 
 	public ImageIcon loadImage(String fileName) {
@@ -102,15 +104,35 @@ public class SwingReview implements ActionListener, KeyListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// 24. Uncomment the 2 lines below
-		// JButton buttonClicked = (JButton)e.getSource();
-		// System.out.println(buttonClicked.getText());
+		 JButton buttonClicked = (JButton)e.getSource();
+		 //System.out.println(buttonClicked.getText());
 
 		// 25. Check which button was clicked
 		// 26. If the "Click Me" button was clicked, use JOptionPane pop-up to say "Good
 		// Choice"
-
+if(buttonClicked.getText() == "Clicketh me!" && count1<3) {
+	JOptionPane.showMessageDialog(null, "A wise choice.");
+	count1 ++;
+}else if(buttonClicked.getText() == "Clicketh me!" && count1==3) {
+	JOptionPane.showMessageDialog(null, "You have proven your loyalty. So you can stop clicking.");
+	button1.setText("You are proven.");
+	count1 ++;
+}else if(buttonClicked.getText() == "Clicketh me!" && count1>3) {
+	JOptionPane.showMessageDialog(null, "Stop.");
+	button1.setText("Stop.");
+}
 		// 27. If the "No, Click Me button" was clicked, say "A Better Choice"
-
+if(buttonClicked.getText() == "Nein, clicketh me!" && count2<3) {
+	JOptionPane.showMessageDialog(null, "A wiser choice.");
+	count2 ++;
+}else if(buttonClicked.getText() == "Nein, clicketh me!" && count2==3) {
+	JOptionPane.showMessageDialog(null, "Thank you for your commitment. But you can stop clicking.");
+	button2.setText("Thank you.");
+	count2 ++;
+}else if(buttonClicked.getText() == "Nein, clicketh me!" && count2>3) {
+	JOptionPane.showMessageDialog(null, "Halt.");
+	button2.setText("Halt.");
+}
 		// 28. If the "Click Me" button is clicked 3 times, change the text of the button
 		// to say "Stop Clicking Me"
 
