@@ -93,7 +93,8 @@ public class SwingReview implements ActionListener, KeyListener {
 		 button2.setFocusable(false);
 
 		// 29. Add a key listener to the frame
-frame.addKeyListener(null);
+		 
+frame.addKeyListener(this);
 	}
 
 	public ImageIcon loadImage(String fileName) {
@@ -105,31 +106,32 @@ frame.addKeyListener(null);
 	public void actionPerformed(ActionEvent e) {
 		// 24. Uncomment the 2 lines below
 		 JButton buttonClicked = (JButton)e.getSource();
+		
 		 //System.out.println(buttonClicked.getText());
 
 		// 25. Check which button was clicked
 		// 26. If the "Click Me" button was clicked, use JOptionPane pop-up to say "Good
 		// Choice"
-if(buttonClicked.getText() == "Clicketh me!" && count1<3) {
+if(buttonClicked.getText() == "Clicketh me!" && count1<2) {
 	JOptionPane.showMessageDialog(null, "A wise choice.");
 	count1 ++;
-}else if(buttonClicked.getText() == "Clicketh me!" && count1==3) {
+}else if(buttonClicked.getText() == "Clicketh me!" && count1==2) {
 	JOptionPane.showMessageDialog(null, "You have proven your loyalty. So you can stop clicking.");
 	button1.setText("You are proven.");
 	count1 ++;
-}else if(buttonClicked.getText() == "Clicketh me!" && count1>3) {
+}else if(buttonClicked.getText() == "Clicketh me!" && count1>=3) {
 	JOptionPane.showMessageDialog(null, "Stop.");
 	button1.setText("Stop.");
 }
 		// 27. If the "No, Click Me button" was clicked, say "A Better Choice"
-if(buttonClicked.getText() == "Nein, clicketh me!" && count2<3) {
+if(buttonClicked.getText() == "Nein, clicketh me!" && count2<2) {
 	JOptionPane.showMessageDialog(null, "A wiser choice.");
 	count2 ++;
-}else if(buttonClicked.getText() == "Nein, clicketh me!" && count2==3) {
+}else if(buttonClicked.getText() == "Nein, clicketh me!" && count2==2) {
 	JOptionPane.showMessageDialog(null, "Thank you for your commitment. But you can stop clicking.");
 	button2.setText("Thank you.");
 	count2 ++;
-}else if(buttonClicked.getText() == "Nein, clicketh me!" && count2>3) {
+}else if(buttonClicked.getText() == "Nein, clicketh me!" && count2>=3) {
 	JOptionPane.showMessageDialog(null, "Halt.");
 	button2.setText("Halt.");
 }
@@ -142,9 +144,9 @@ if(buttonClicked.getText() == "Nein, clicketh me!" && count2<3) {
 	public void keyTyped(KeyEvent e) {
 		// 30. Save the key typed by the user to a variable
 		// HINT: Look at the methods that KeyEvent e has
-
+String key = KeyEvent.getKeyText(6);
 		// 31. Use JOptionPane pop-up to tell the user which key they typed
-
+JOptionPane.showMessageDialog(null, key);
 	}
 
 	@Override
